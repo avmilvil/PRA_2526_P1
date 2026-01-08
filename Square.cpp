@@ -24,7 +24,7 @@ Square::Square() : Rectangle() {
 
 Square::Square(std::string color, Point2D* vertices) : Rectangle(color, vertices) {
     	if (!check(vertices)) {
-        	throw std::invalid_argument("Los vertices no forman un cuadrado válido.");
+        	throw std::invalid_argument("Provided vertices do not build a valid square!");
     	}
 
     	this->set_vertices(vertices);
@@ -32,7 +32,7 @@ Square::Square(std::string color, Point2D* vertices) : Rectangle(color, vertices
 
 void Square::set_vertices(Point2D* vertices) {
     	if (!check(vertices)) {
-        	throw std::invalid_argument("Los vertices no forman un cuadrado válido.");
+        	throw std::invalid_argument("Provided vertices do not build a valid square!");
     	}
 
     	for (int i = 0; i < Rectangle::N_VERTICES; i++) {

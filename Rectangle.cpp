@@ -44,7 +44,7 @@ Rectangle::~Rectangle() {
 
 Point2D Rectangle::get_vertex(int ind) const {
 	if (ind < 0 || ind >= N_VERTICES){
-        	throw std::out_of_range("Indice fuera de rango.");
+        	throw std::out_of_range("Out of range!");
 	}
 
     	return vs[ind];
@@ -56,7 +56,7 @@ Point2D Rectangle::operator[](int ind) const {
 
 void Rectangle::set_vertices(Point2D* vertices) {
    	if (!check(vertices)){
-        	throw std::invalid_argument("Los vertices no forman un rectángulo válido.");
+        	throw std::invalid_argument("Provided vertices do not build a valid rectangle!");
 	}
 
     	for (int i = 0; i < N_VERTICES; i++){
