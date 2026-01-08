@@ -29,7 +29,7 @@ public:
 
 	void insert(int pos, T e){
 		if(pos < 0){
-			throw std::out_of_range("Posición inválida.");
+			throw std::out_of_range("Posición inválida!");
 		}
 
 		if(pos == 0){
@@ -44,7 +44,7 @@ public:
 		}
 
 		if(current == nullptr){
-			throw std::out_of_range("Posición inválida");
+			throw std::out_of_range("Posición inválida!");
 		}
 
 		current->next = new Node<T>(e, current->next);
@@ -53,13 +53,13 @@ public:
 
 	T remove(int pos){
 		if(pos < 0 ){
-			throw std::out_of_range("Posición inválida.");
+			throw std::out_of_range("Posición inválida!");
 		}
 
 		Node<T>* aux;
 		if(pos == 0){
 			if(first == nullptr){
-				throw std::out_of_range("Posición inválida.");
+				throw std::out_of_range("Posición inválida!");
 			}
 			aux = first;
 			T value = aux->data;
@@ -76,7 +76,7 @@ public:
 		}
 
 		if(current == nullptr || current->next == nullptr){
-			throw std::out_of_range("Posición inválida.");
+			throw std::out_of_range("Posición inválida!");
 		}
 
 		aux = current->next;
@@ -90,12 +90,12 @@ public:
 
 	T get(int pos) const{
 		if(pos < 0){
-			throw std::out_of_range("Posición inválida.");
+			throw std::out_of_range("Posición inválida!");
 		}
 
 		if(pos == 0){
 			if(first == nullptr){
-				throw std::out_of_range("Posición inválida.");
+				throw std::out_of_range("Posición inválida!");
 			}
 			return first->data;
 		}
@@ -107,7 +107,7 @@ public:
 		}
 
 		if(current == nullptr){
-			throw std::out_of_range("Posición inválida.");
+			throw std::out_of_range("Posición inválida!");
 		}
 
 		return current->data;
@@ -146,7 +146,7 @@ public:
 
 	T operator[](int pos){
 		if(pos < 0 || pos >= n){
-			throw std::out_of_range("Posición inválida.");
+			throw std::out_of_range("Posición inválida!");
 		}
 
 		Node<T>* current = first;
