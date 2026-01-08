@@ -166,17 +166,22 @@ public:
 
 template <typename T>
 std::ostream& operator<<(std::ostream& out, const ListLinked<T>& list){
+	out << "List => ";
+	if(list.n == 0){
+		out << "[]";
+		return out;
+	}
 	Node<T>*current = list.first;
-	out << "[";
+	out << "[" << std::endl;
 	while(current != nullptr){
-		out << current->data;
+		out << "  " << current->data;
 		if(current->next != nullptr){
-			out<<", ";
+			out << std::endl;
 		}
 		current = current->next;
 	}
 	
-	out<<"]";
+	out<< std::endl <<"]";
 	return out;
 }
 

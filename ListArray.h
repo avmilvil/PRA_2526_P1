@@ -36,7 +36,7 @@ class ListArray : public List<T> {
 
 		T operator[](int pos){
 			if(pos < 0 || pos >= n){
-				throw std::out_of_range("Posición inválida.");
+				throw std::out_of_range("Posición inválida!");
 			}
 
 			return arr[pos];
@@ -44,18 +44,24 @@ class ListArray : public List<T> {
 		}
 
 		friend std::ostream& operator<<(std::ostream& out, const ListArray<T>& list){
-			out << "[";
-			for(int i = 0; i < list.n; i++){
-				out << list.arr[i];
-				if(i < list.n-1) out << ", ";
+			out << "List => ";
+			if(list.n == 0){
+				out << "[]";
+				return out;
 			}
-			out << "]";
+
+			out << "[" << std::endl;
+			for(int i = 0; i < list.n; i++){
+				out << "  " << list.arr[i];
+				if(i < list.n-1) out << std::endl;
+			}
+			out << std::endl << "]";
 			return out;
 		}
 
 		void insert(int pos, T e) override{
 			if(pos < 0 || pos > n){
-				throw std::out_of_range("Posición inválida.");
+				throw std::out_of_range("Posición inválida!");
 			}
 
 			if(n == max){
@@ -73,7 +79,7 @@ class ListArray : public List<T> {
 
 		T remove(int pos) override{
 			if(pos < 0 || pos >= n){
-				throw std::out_of_range("Posición inválida.");
+				throw std::out_of_range("Posición inválida!");
 			}
 
 			if(n == max){
@@ -97,7 +103,7 @@ class ListArray : public List<T> {
 
 		T get(int pos) const override{
 			if(pos < 0 || pos >= n){
-				throw std::out_of_range("Posición inválida.");
+				throw std::out_of_range("Posición inválida!");
 			}
 
 			return arr[pos];
